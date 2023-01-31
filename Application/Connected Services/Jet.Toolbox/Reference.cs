@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ServiceReference1
+namespace Jet.Toolbox
 {
     
     
@@ -220,52 +220,36 @@ namespace ServiceReference1
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://webservice.pzm.nautavis.com/", ConfigurationName="ServiceReference1.ToolboxService")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://webservice.pzm.nautavis.com/", ConfigurationName="Jet.Toolbox.ToolboxService")]
     public interface ToolboxService
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://webservice.pzm.nautavis.com/ToolboxService/saveMaschineOperatingtimeDataLi" +
             "stRequest", ReplyAction="http://webservice.pzm.nautavis.com/ToolboxService/saveMaschineOperatingtimeDataLi" +
             "stResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(ServiceReference1.Exception), Action="http://webservice.pzm.nautavis.com/ToolboxService/saveMaschineOperatingtimeDataLi" +
+        [System.ServiceModel.FaultContractAttribute(typeof(Jet.Toolbox.Exception), Action="http://webservice.pzm.nautavis.com/ToolboxService/saveMaschineOperatingtimeDataLi" +
             "st/Fault/Exception", Name="Exception")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.saveMaschineOperatingtimeDataListResponse saveMaschineOperatingtimeDataList(ServiceReference1.saveMaschineOperatingtimeDataListRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webservice.pzm.nautavis.com/ToolboxService/saveMaschineOperatingtimeDataLi" +
-            "stRequest", ReplyAction="http://webservice.pzm.nautavis.com/ToolboxService/saveMaschineOperatingtimeDataLi" +
-            "stResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.saveMaschineOperatingtimeDataListResponse> saveMaschineOperatingtimeDataListAsync(ServiceReference1.saveMaschineOperatingtimeDataListRequest request);
+        System.Threading.Tasks.Task<Jet.Toolbox.saveMaschineOperatingtimeDataListResponse> saveMaschineOperatingtimeDataListAsync(Jet.Toolbox.saveMaschineOperatingtimeDataListRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://webservice.pzm.nautavis.com/ToolboxService/saveMaschineProductionDataListR" +
             "equest", ReplyAction="http://webservice.pzm.nautavis.com/ToolboxService/saveMaschineProductionDataListR" +
             "esponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(ServiceReference1.Exception), Action="http://webservice.pzm.nautavis.com/ToolboxService/saveMaschineProductionDataList/" +
+        [System.ServiceModel.FaultContractAttribute(typeof(Jet.Toolbox.Exception), Action="http://webservice.pzm.nautavis.com/ToolboxService/saveMaschineProductionDataList/" +
             "Fault/Exception", Name="Exception")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.saveMaschineProductionDataListResponse saveMaschineProductionDataList(ServiceReference1.saveMaschineProductionDataListRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webservice.pzm.nautavis.com/ToolboxService/saveMaschineProductionDataListR" +
-            "equest", ReplyAction="http://webservice.pzm.nautavis.com/ToolboxService/saveMaschineProductionDataListR" +
-            "esponse")]
-        System.Threading.Tasks.Task<ServiceReference1.saveMaschineProductionDataListResponse> saveMaschineProductionDataListAsync(ServiceReference1.saveMaschineProductionDataListRequest request);
+        System.Threading.Tasks.Task<Jet.Toolbox.saveMaschineProductionDataListResponse> saveMaschineProductionDataListAsync(Jet.Toolbox.saveMaschineProductionDataListRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://webservice.pzm.nautavis.com/ToolboxService/saveVersionInfoRequest", ReplyAction="http://webservice.pzm.nautavis.com/ToolboxService/saveVersionInfoResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(ServiceReference1.Exception), Action="http://webservice.pzm.nautavis.com/ToolboxService/saveVersionInfo/Fault/Exception" +
+        [System.ServiceModel.FaultContractAttribute(typeof(Jet.Toolbox.Exception), Action="http://webservice.pzm.nautavis.com/ToolboxService/saveVersionInfo/Fault/Exception" +
             "", Name="Exception")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.saveVersionInfoResponse saveVersionInfo(ServiceReference1.saveVersionInfoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webservice.pzm.nautavis.com/ToolboxService/saveVersionInfoRequest", ReplyAction="http://webservice.pzm.nautavis.com/ToolboxService/saveVersionInfoResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.saveVersionInfoResponse> saveVersionInfoAsync(ServiceReference1.saveVersionInfoRequest request);
+        System.Threading.Tasks.Task<Jet.Toolbox.saveVersionInfoResponse> saveVersionInfoAsync(Jet.Toolbox.saveVersionInfoRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://webservice.pzm.nautavis.com/ToolboxService/getMachinesRequest", ReplyAction="http://webservice.pzm.nautavis.com/ToolboxService/getMachinesResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(ServiceReference1.Exception), Action="http://webservice.pzm.nautavis.com/ToolboxService/getMachines/Fault/Exception", Name="Exception")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Jet.Toolbox.Exception), Action="http://webservice.pzm.nautavis.com/ToolboxService/getMachines/Fault/Exception", Name="Exception")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        ServiceReference1.getMachinesResponse getMachines(ServiceReference1.getMachinesRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://webservice.pzm.nautavis.com/ToolboxService/getMachinesRequest", ReplyAction="http://webservice.pzm.nautavis.com/ToolboxService/getMachinesResponse")]
-        System.Threading.Tasks.Task<ServiceReference1.getMachinesResponse> getMachinesAsync(ServiceReference1.getMachinesRequest request);
+        System.Threading.Tasks.Task<Jet.Toolbox.getMachinesResponse> getMachinesAsync(Jet.Toolbox.getMachinesRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -276,13 +260,13 @@ namespace ServiceReference1
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.pzm.nautavis.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("arg0", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ServiceReference1.maschineOperatingtimeDataDto[] arg0;
+        public Jet.Toolbox.maschineOperatingtimeDataDto[] arg0;
         
         public saveMaschineOperatingtimeDataListRequest()
         {
         }
         
-        public saveMaschineOperatingtimeDataListRequest(ServiceReference1.maschineOperatingtimeDataDto[] arg0)
+        public saveMaschineOperatingtimeDataListRequest(Jet.Toolbox.maschineOperatingtimeDataDto[] arg0)
         {
             this.arg0 = arg0;
         }
@@ -436,13 +420,13 @@ namespace ServiceReference1
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.pzm.nautavis.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("arg0", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ServiceReference1.maschineProductionDataDto[] arg0;
+        public Jet.Toolbox.maschineProductionDataDto[] arg0;
         
         public saveMaschineProductionDataListRequest()
         {
         }
         
-        public saveMaschineProductionDataListRequest(ServiceReference1.maschineProductionDataDto[] arg0)
+        public saveMaschineProductionDataListRequest(Jet.Toolbox.maschineProductionDataDto[] arg0)
         {
             this.arg0 = arg0;
         }
@@ -596,13 +580,13 @@ namespace ServiceReference1
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.pzm.nautavis.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ServiceReference1.maschineVersionInfoDto arg0;
+        public Jet.Toolbox.maschineVersionInfoDto arg0;
         
         public saveVersionInfoRequest()
         {
         }
         
-        public saveVersionInfoRequest(ServiceReference1.maschineVersionInfoDto arg0)
+        public saveVersionInfoRequest(Jet.Toolbox.maschineVersionInfoDto arg0)
         {
             this.arg0 = arg0;
         }
@@ -783,26 +767,26 @@ namespace ServiceReference1
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://webservice.pzm.nautavis.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public ServiceReference1.maschineDto[] @return;
+        public Jet.Toolbox.maschineDto[] @return;
         
         public getMachinesResponse()
         {
         }
         
-        public getMachinesResponse(ServiceReference1.maschineDto[] @return)
+        public getMachinesResponse(Jet.Toolbox.maschineDto[] @return)
         {
             this.@return = @return;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    public interface ToolboxServiceChannel : ServiceReference1.ToolboxService, System.ServiceModel.IClientChannel
+    public interface ToolboxServiceChannel : Jet.Toolbox.ToolboxService, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    public partial class ToolboxServiceClient : System.ServiceModel.ClientBase<ServiceReference1.ToolboxService>, ServiceReference1.ToolboxService
+    public partial class ToolboxServiceClient : System.ServiceModel.ClientBase<Jet.Toolbox.ToolboxService>, Jet.Toolbox.ToolboxService
     {
         
         /// <summary>
@@ -845,42 +829,22 @@ namespace ServiceReference1
         {
         }
         
-        public ServiceReference1.saveMaschineOperatingtimeDataListResponse saveMaschineOperatingtimeDataList(ServiceReference1.saveMaschineOperatingtimeDataListRequest request)
-        {
-            return base.Channel.saveMaschineOperatingtimeDataList(request);
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReference1.saveMaschineOperatingtimeDataListResponse> saveMaschineOperatingtimeDataListAsync(ServiceReference1.saveMaschineOperatingtimeDataListRequest request)
+        public System.Threading.Tasks.Task<Jet.Toolbox.saveMaschineOperatingtimeDataListResponse> saveMaschineOperatingtimeDataListAsync(Jet.Toolbox.saveMaschineOperatingtimeDataListRequest request)
         {
             return base.Channel.saveMaschineOperatingtimeDataListAsync(request);
         }
         
-        public ServiceReference1.saveMaschineProductionDataListResponse saveMaschineProductionDataList(ServiceReference1.saveMaschineProductionDataListRequest request)
-        {
-            return base.Channel.saveMaschineProductionDataList(request);
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReference1.saveMaschineProductionDataListResponse> saveMaschineProductionDataListAsync(ServiceReference1.saveMaschineProductionDataListRequest request)
+        public System.Threading.Tasks.Task<Jet.Toolbox.saveMaschineProductionDataListResponse> saveMaschineProductionDataListAsync(Jet.Toolbox.saveMaschineProductionDataListRequest request)
         {
             return base.Channel.saveMaschineProductionDataListAsync(request);
         }
         
-        public ServiceReference1.saveVersionInfoResponse saveVersionInfo(ServiceReference1.saveVersionInfoRequest request)
-        {
-            return base.Channel.saveVersionInfo(request);
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReference1.saveVersionInfoResponse> saveVersionInfoAsync(ServiceReference1.saveVersionInfoRequest request)
+        public System.Threading.Tasks.Task<Jet.Toolbox.saveVersionInfoResponse> saveVersionInfoAsync(Jet.Toolbox.saveVersionInfoRequest request)
         {
             return base.Channel.saveVersionInfoAsync(request);
         }
         
-        public ServiceReference1.getMachinesResponse getMachines(ServiceReference1.getMachinesRequest request)
-        {
-            return base.Channel.getMachines(request);
-        }
-        
-        public System.Threading.Tasks.Task<ServiceReference1.getMachinesResponse> getMachinesAsync(ServiceReference1.getMachinesRequest request)
+        public System.Threading.Tasks.Task<Jet.Toolbox.getMachinesResponse> getMachinesAsync(Jet.Toolbox.getMachinesRequest request)
         {
             return base.Channel.getMachinesAsync(request);
         }

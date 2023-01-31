@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using ServiceReference1;
+using Jet.Toolbox;
 
 
 var toolbox = new ToolboxServiceClient();
@@ -23,6 +23,12 @@ try
         {
             Console.WriteLine($"Machine: Product: {machine.Product} | MachineNumber {machine.MachineNumber}");
         }
+
+        //var versionInfoRequest = new saveVersionInfoRequest();
+        //versionInfoRequest.arg0.MachineNumber = machines[0].MachineNumber;
+        //versionInfoRequest.arg0.WindowsVersion = "Funny version";
+
+        //await toolbox.saveVersionInfoAsync(versionInfoRequest);
     }
     catch (System.Exception e)
     {

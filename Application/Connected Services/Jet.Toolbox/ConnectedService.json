@@ -9,9 +9,8 @@
     ],
     "messageContract": true,
     "namespaceMappings": [
-      "*, ServiceReference1"
+      "*, Jet.Toolbox"
     ],
-    "sync": true,
     "targetFramework": "net6.0",
     "typeReuseMode": "None"
   }
