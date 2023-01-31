@@ -1,4 +1,5 @@
-﻿using System.ServiceModel;
+﻿using System.Collections.Concurrent;
+using System.ServiceModel;
 using Jet.Toolbox;
 
 namespace Application;
@@ -9,17 +10,19 @@ namespace Application;
 public sealed class ToolBoxService
 {
     private readonly ToolboxServiceClient toolbox;
+    private readonly ConcurrentDictionary<string, maschineDto> machines;
 
     /// <summary>
     /// Gets the machines
     /// </summary>
     // ToDo 4Jet Maschinen Klasse mit Translator
-    public IReadOnlyCollection<maschineDto> Machines { get; private set; }
+    public IReadOnlyDictionary<string, maschineDto> Machines => machines;
 
     /// <summary>
     /// Gets the state
     /// </summary>
     public CommunicationState State => toolbox.State;
+
     public bool IsConnected => toolbox.State == CommunicationState.Opened;
 
     /// <summary>
@@ -28,13 +31,14 @@ public sealed class ToolBoxService
     public ToolBoxService()
     {
         toolbox = new ToolboxServiceClient();
+        machines = new ConcurrentDictionary<string, maschineDto>();
     }
 
     public Task ConnectAsync()
     {
         //TOdo better exception??
-        return IsConnected 
-            ? Task.CompletedTask 
+        return IsConnected
+            ? Task.CompletedTask
             : toolbox.OpenAsync();
     }
 
@@ -42,7 +46,7 @@ public sealed class ToolBoxService
     {
         //TOdo better exception??
         return !IsConnected
-            ? Task.CompletedTask 
+            ? Task.CompletedTask
             : toolbox.CloseAsync();
     }
 
@@ -52,10 +56,13 @@ public sealed class ToolBoxService
         {
             throw new ToolBoxException($"{nameof(ToolBoxService)} is not connected");
         }
-        var machinesRequest = new getMachinesRequest();
-        var machinesResponse = await toolbox.getMachinesAsync(machinesRequest).ConfigureAwait(false);
-        var machines = machinesResponse.@return;
-        Machines = new List<maschineDto>(machines);
+
+        var machinesResponse = await toolbox.getMachinesAsync(new getMachinesRequest()).ConfigureAwait(false);
+        var machinesResponseReturn = machinesResponse.@return;
+        machines.Clear();
+        foreach (var machineData in machinesResponseReturn)
+        {
+            machines.AddOrUpdate(machineData.MachineNumber, machineData, (_, dto) => dto);
+        }
     }
 }
-

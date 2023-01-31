@@ -12,7 +12,7 @@ try
     await toolbox.ReadMachinesAsync().ConfigureAwait(false);
 
         
-    foreach (var machine in toolbox.Machines)
+    foreach ((var _, var machine) in toolbox.Machines)
     {
         Console.WriteLine($"Machine: Product: {machine.Product} | MachineNumber {machine.MachineNumber}");
     }
