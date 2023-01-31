@@ -1,48 +1,40 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Jet.Toolbox;
+using Application;
 
-
-var toolbox = new ToolboxServiceClient();
+var toolbox = new ToolBoxService();
 try
 {
+    await toolbox.ConnectAsync().ConfigureAwait(false);
+    Console.WriteLine($"State is: {toolbox.State}");
+    await toolbox.ReadMachinesAsync().ConfigureAwait(false);
 
-    try
+    await toolbox.ReadMachinesAsync().ConfigureAwait(false);
+
+        
+    foreach (var machine in toolbox.Machines)
     {
-        await toolbox.OpenAsync();
-        Console.WriteLine($"State is: {toolbox.State}");
-        var machinesRequest = new getMachinesRequest();
-        Console.WriteLine(machinesRequest);
-
-        var machinesResponse = await toolbox.getMachinesAsync(machinesRequest);
-
-        var machines = machinesResponse.@return;
-        Console.WriteLine($"{machines.Length} machines received");
-
-        foreach (var machine in machines)
-        {
-            Console.WriteLine($"Machine: Product: {machine.Product} | MachineNumber {machine.MachineNumber}");
-        }
-
-        //var versionInfoRequest = new saveVersionInfoRequest();
-        //versionInfoRequest.arg0.MachineNumber = machines[0].MachineNumber;
-        //versionInfoRequest.arg0.WindowsVersion = "Funny version";
-
-        //await toolbox.saveVersionInfoAsync(versionInfoRequest);
-    }
-    catch (System.Exception e)
-    {
-        Console.WriteLine($"Exception: {e.Message}");
+        Console.WriteLine($"Machine: Product: {machine.Product} | MachineNumber {machine.MachineNumber}");
     }
 
+    //var versionInfoRequest = new saveVersionInfoRequest();
+    //versionInfoRequest.arg0.MachineNumber = machines[0].MachineNumber;
+    //versionInfoRequest.arg0.WindowsVersion = "Funny version";
+
+    //await toolbox.saveVersionInfoAsync(versionInfoRequest);
+}
+catch (Exception e)
+{
+    Console.WriteLine($"Exception: {e.Message}");
 }
 finally
 {
     
-    await toolbox.CloseAsync();
+    await toolbox.DisConnect().ConfigureAwait(false);
     Console.WriteLine($"State is: {toolbox.State}");
 }
 
+Console.WriteLine("Press any key to close");
 Console.ReadLine();
 
 
